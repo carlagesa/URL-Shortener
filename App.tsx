@@ -3,8 +3,27 @@ import URLShortener from "./components/URLShortener"
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl font-bold mb-8 text-gray-800">URL Shortener</h1>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "1rem",
+        backgroundColor: "#f0f0f0",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "2.5rem",
+          fontWeight: "bold",
+          marginBottom: "2rem",
+          color: "#333",
+        }}
+      >
+        URL Shortener
+      </h1>
       <URLShortener />
     </div>
   )

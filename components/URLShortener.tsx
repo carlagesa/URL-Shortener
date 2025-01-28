@@ -36,41 +36,69 @@ const URLShortener: React.FC = () => {
   }
 
   return (
-    <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full">
-      <form onSubmit={handleSubmit} className="mb-4">
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="url">
+    <div
+      style={{
+        backgroundColor: "white",
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        borderRadius: "8px",
+        padding: "2rem",
+        maxWidth: "400px",
+        width: "100%",
+      }}
+    >
+      <form onSubmit={handleSubmit}>
+        <div style={{ marginBottom: "1rem" }}>
+          <label
+            htmlFor="url"
+            style={{
+              display: "block",
+              marginBottom: "0.5rem",
+              fontWeight: "bold",
+              color: "#333",
+            }}
+          >
             Long URL
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="url"
             type="url"
-            placeholder="Enter your long URL"
             value={longUrl}
             onChange={(e) => setLongUrl(e.target.value)}
             required
+            style={{
+              width: "100%",
+              padding: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+            }}
+            placeholder="Enter your long URL"
           />
         </div>
-        <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-            disabled={isLoading}
-          >
-            {isLoading ? "Shortening..." : "Shorten URL"}
-          </button>
-        </div>
+        <button
+          type="submit"
+          disabled={isLoading}
+          style={{
+            backgroundColor: "#4299e1",
+            color: "white",
+            padding: "0.5rem 1rem",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "1rem",
+          }}
+        >
+          {isLoading ? "Shortening..." : "Shorten URL"}
+        </button>
       </form>
-      {error && <p className="text-red-500 text-xs italic">{error}</p>}
+      {error && <p style={{ color: "red", marginTop: "1rem" }}>{error}</p>}
       {shortUrl && (
-        <div className="mt-4">
-          <h3 className="text-lg font-semibold mb-2">Shortened URL:</h3>
+        <div style={{ marginTop: "1rem" }}>
+          <h3 style={{ fontWeight: "bold", marginBottom: "0.5rem" }}>Shortened URL:</h3>
           <a
             href={shortUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:underline break-all"
+            style={{ color: "#4299e1", wordBreak: "break-all" }}
           >
             {shortUrl}
           </a>
