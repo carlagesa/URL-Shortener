@@ -8,7 +8,7 @@ function App() {
   const [error, setError] = useState<string | null>(null)
 
   const { complete, isLoading } = useCompletion({
-    api: "/api/shorten",
+    api: "/shorten",
   })
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
