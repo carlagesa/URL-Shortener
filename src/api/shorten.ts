@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 
-const DJANGO_API_URL = process.env.REACT_APP_DJANGO_API_URL || "http://127.0.0.1:8000/shorten/"
+const DJANGO_API_URL = process.env.REACT_APP_DJANGO_API_URL || "http://localhost:8000/api/shorten/"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
